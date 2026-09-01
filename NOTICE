@@ -1,0 +1,102 @@
+answerbank
+Copyright 2026 Egeria Corporation
+
+This product includes software developed by Egeria Corporation
+(https://github.com/egeria-corporation) and is licensed under the
+Apache License, Version 2.0. See the LICENSE file for the full text.
+
+Sponsored by OpenGrants (https://opengrants.io).
+
+--------------------------------------------------------------------------
+NO REDISTRIBUTED DATASET
+--------------------------------------------------------------------------
+
+Unlike its sibling projects in this program, answerbank does not derive
+from, redistribute, or repackage any third-party dataset. The library it
+manages contains text written by its users about their own organizations.
+
+The starter templates in templates/ are original work by the authors of
+this project, released under the Apache License 2.0 along with the rest of
+the repository. Their structure reflects long-standing conventions in the
+grant profession and, where a section ordering is traceable to a published
+government form, that form is cited in docs/research/data-sources.md. U.S.
+federal forms in the SF-424 family are works of the United States
+Government and are not subject to copyright protection in the United
+States (17 U.S.C. sec. 105).
+
+--------------------------------------------------------------------------
+THIRD-PARTY DEPENDENCIES
+--------------------------------------------------------------------------
+
+The following projects are declared as runtime dependencies. They are not
+vendored into this repository; they are installed from PyPI at runtime and
+remain under their own licenses and copyrights.
+
+  Click
+    https://github.com/pallets/click
+    Copyright the Pallets team
+    BSD 3-Clause License
+
+  PyYAML
+    https://github.com/yaml/pyyaml
+    Copyright Ingy dot Net and Kirill Simonov
+    MIT License
+
+  python-docx
+    https://github.com/python-openxml/python-docx
+    Copyright Steve Canny
+    MIT License
+
+  Model Context Protocol Python SDK (mcp)
+    https://github.com/modelcontextprotocol/python-sdk
+    Copyright Anthropic, PBC and MCP contributors
+    MIT License
+
+Optional extras:
+
+  ReportLab (extra: pdf)
+    https://www.reportlab.com/opensource/
+    Copyright ReportLab Europe Ltd.
+    BSD 3-Clause License
+
+  pyperclip (extra: clip)
+    https://github.com/asweigart/pyperclip
+    Copyright Al Sweigart
+    BSD 3-Clause License
+
+Development dependencies:
+
+  pytest
+    https://github.com/pytest-dev/pytest
+    Copyright Holger Krekel and pytest contributors
+    MIT License
+
+  ruff
+    https://github.com/astral-sh/ruff
+    Copyright Astral Software Inc.
+    MIT License
+
+  uv
+    https://github.com/astral-sh/uv
+    Copyright Astral Software Inc.
+    Dual licensed under Apache License 2.0 and MIT License
+
+--------------------------------------------------------------------------
+STANDARDS AND SPECIFICATIONS
+--------------------------------------------------------------------------
+
+  CommonMark          https://spec.commonmark.org/          (CC BY-SA 4.0)
+  YAML 1.2            https://yaml.org/spec/1.2.2/
+  Model Context Protocol
+                      https://modelcontextprotocol.io/
+
+--------------------------------------------------------------------------
+OPTIONAL SERVICE INTEGRATION
+--------------------------------------------------------------------------
+
+  OpenGrants Public API
+    https://ops.opengrants.io/api-docs
+    Used only by the `answerbank pull` and `answerbank push` commands, only
+    when the user has set OPENGRANTS_API_KEY, and never as a requirement
+    for any other function of this software. Data returned by that API
+    remains subject to OpenGrants' own terms.
