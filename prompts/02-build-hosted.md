@@ -346,7 +346,7 @@ Run these against `site/dist` in CI and fail the build on any of them. Every one
 3. **Any analytics that sets a cookie** or would require a consent banner.
 4. **Deviating from Netlify**, or adding anything platform-specific that would make the Cloudflare path fail.
 5. **Publishing a specific claim about a funder's requirements** that cannot be cited to a published form or notice. "HRSA program narratives are commonly structured as..." is fine. "HRSA requires 1,500 words" needs a citation or it does not ship.
-6. **Publishing a competitor's price.** `docs/research/competitive.md` marks several figures VERIFY. Re-check on the vendor's own pricing page and date-stamp it in the text, or leave it out.
+6. **Naming or pricing a competitor anywhere on the site.** The program rule is that no repository or hosted page names a commercial competitor or quotes its price. Describe the category instead — `docs/research/competitive.md` shows how. See `docs/program/CONVENTIONS.md`, "No competitor naming or pricing."
 7. **Changing the URL structure** after launch, for any reason.
 8. **Any content presenting a template as a finished answer** rather than a skeleton. Templates that read as complete get pasted in unchanged, and identical proposals land on the same program officer's desk.
 9. **Adding a gate of any kind** in front of the guidance content, including an email-for-download.

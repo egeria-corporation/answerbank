@@ -1,14 +1,17 @@
 # Prior art
 
-Nobody is waiting for permission to solve this problem. Every working grant professional has already built something, and most of those somethings are worse than they deserve. This document names what people actually use, credits what deserves credit, and says specifically why each approach fails at the thing answerbank is for.
+What people already use to solve this problem, what each approach gets right, and where each one
+fails a consultant maintaining current, verified language for a dozen organizations.
 
-The honest summary: the enterprise sales world solved this exact problem fifteen years ago, priced the solution for enterprise sales teams, and nobody ported it down to a market where the median customer is one person with twelve clients and no software budget.
-
-Verified 2026-08-30. Pricing figures are marked with their source and their verification status. Re-check any figure on the vendor's own page before it appears in public copy.
+> **Note on scope.** Sections comparing named commercial products have been removed from this
+> repository for now; that analysis is maintained internally. What remains is what the program's
+> conventions actually require prior art to cover: the open source and community work this
+> repository builds on, the incumbent practice it has to beat, and the upstream contribution
+> posture. Nothing here names or prices a commercial product.
 
 ---
 
-## 1. The Google Docs boilerplate folder
+## The Google Docs boilerplate folder
 
 **What it is.** A Drive folder per client containing `BOILERPLATE.docx`, or a single long document with headings, or a spreadsheet with a column of pasted paragraphs. This is what the overwhelming majority of the field uses. It should be treated with respect, because it works well enough that nothing has displaced it.
 
@@ -30,48 +33,34 @@ Verified 2026-08-30. Pricing figures are marked with their source and their veri
 
 ---
 
-## 2. Foundant GrantHub and the funder-side platforms
+---
 
-**What it is.** Foundant Technologies sells Grant Lifecycle Manager to funders and GrantHub to grantseekers; GrantHub came to Foundant by acquisition. GrantHub includes a document and boilerplate store alongside deadline tracking and task assignment, and it is the closest commercial analog to answerbank in the nonprofit market. Blackbaud Grantmaking, Fluxx, Submittable, and SM Apply occupy the funder side of the same workflow.
+## Grant management and proposal software
 
-**What it gets right.**
-- Boilerplate storage genuinely is a feature, not an afterthought, and the vendor understands why it matters.
-- Integrated with deadlines and tasks, which is where a development director actually lives.
-- Multi-user, with roles, which small development shops need.
-
-**Why it fails for the target user.**
-- **Priced and shaped for a development department, not a solo consultant.** Pricing is quote-based rather than published. **VERIFY** any number before publishing one; the practitioner-reported range for grantseeker-side tooling in this class is roughly $1,000 to $2,500 per year, and that figure is unconfirmed.
-- **Your text lives in their database.** Ending the relationship means an export, and the export is not a format you can keep working in.
-- **No length variants and no verification interval** in the boilerplate store, which are the two features that actually change the work.
-- **Client handoff is a problem, not a feature.** A consultant who wants to leave a client with their own narrative library cannot hand over a seat in the consultant's account.
-- **No agent interface.** There is no way to point a model at the library.
-
-**What answerbank borrows.** The confirmation that the need is real enough to be a shipped feature in a paid product. That is validation, not competition, and it deserves saying plainly.
+**Removed from this repository for now.** The scope-relevant summary: a narrative library exists as
+a secondary feature inside software sold to development departments and inside proposal management
+software sold to enterprise sales teams. Both are priced and shaped for an organization with a team.
+Nobody sells this as a standalone tool to a solo consultant, which is the gap. See `competitive.md`.
 
 ---
 
-## 3. Proposal and RFP response software from enterprise sales
+## AI drafting tools
 
-**What it is.** Loopio, Responsive (formerly RFPIO), and Qvidian are answer-library products for enterprise sales teams responding to requests for proposal. They store approved answers, tag them by topic, assign each an owner and a review date, prompt the owner when the review date passes, and let a salesperson assemble a response from the library. Increasingly they also do AI-assisted assembly grounded in the library.
+**Vendor names removed for now.** The category argument still matters, because it shapes what
+`answerbank` is:
 
-This is, structurally, exactly what answerbank does. It is worth being explicit that the idea is not original; the market it is aimed at is.
+Tools that generate proposal prose from a prompt produce text that is fluent, generic, and
+increasingly recognizable to the people reading it. Funders have begun saying so out loud. The
+output is the product, so there is no durable asset left behind — nothing that is *yours* next year.
 
-**What it gets right, and what answerbank takes directly.**
-- **Content ownership per answer.** Every answer has a human who is responsible for its accuracy. This is where the `owner` front-matter field comes from.
-- **Review cycles per answer, not per library.** Security questionnaire answers age in months; company history ages in years. This is exactly the `verify_every` design, and the RFP-response industry got there first.
-- **Grounded assembly.** Draft from the approved library, not from a blank page or from a general-purpose model. The industry's whole value proposition is that the answer was already approved by somebody who knows.
-
-**Why it does not fit.**
-- **Price.** These are enterprise seats sold to revenue teams. Public pricing is generally unavailable and requires a sales conversation. **VERIFY**; do not publish a figure without a current source. Whatever the number, it is not a number a solo grant consultant reaches for.
-- **Multi-tenancy is per company, not per client.** These products assume one organization's answers. A consultant needs twelve separate libraries with no bleed between them, and a hard guarantee that Casa Esperanza's program data never appears in a Riverkeeper draft.
-- **Cloud-only.** Client narratives on a vendor's servers is a posture a consultant may not be able to agree to on a client's behalf.
-- **Vocabulary and templates are sales, not philanthropy.** Nothing in a security questionnaire library helps you write a logic model.
-
-**Credit where due.** If answerbank has an intellectual ancestor, it is this category. The design of per-answer review intervals is lifted from it deliberately.
+`answerbank` inverts that. It stores what a human wrote and verified, tracks when it was last
+confirmed, and serves the right variant. Pointed at the library, a model drafts in that
+organization's own current language rather than in the average of the internet. That is a different
+artifact, and it is the sharp answer to the AI-slop objection rather than an instance of it.
 
 ---
 
-## 4. Snippet managers and text expanders
+## Snippet managers and text expanders
 
 **What it is.** TextExpander, Espanso (open source, GPL-3.0), Alfred snippets, Raycast snippets, and the snippet features built into editors.
 
@@ -89,7 +78,9 @@ This is, structurally, exactly what answerbank does. It is worth being explicit 
 
 ---
 
-## 5. Note systems: Obsidian, Notion, Logseq, plain folders
+---
+
+## Note systems: Obsidian, Notion, Logseq, plain folders
 
 **What it is.** A serious minority of grant professionals keep boilerplate in Obsidian or Notion, often with a database of answers tagged by question type.
 
@@ -107,21 +98,9 @@ This is, structurally, exactly what answerbank does. It is worth being explicit 
 
 ---
 
-## 6. AI grant writing tools
-
-**What it is.** A crowded and fast-moving category: Grantable, Grantboost, GrantAssistant, Fundwriter, and a steady stream of new entrants, plus general-purpose assistants used directly. Several of them do include an "answer library" or "knowledge base" feature, which is a sign the market has independently found the same insight.
-
-**Why they are the wrong shape.**
-- **The output is the product.** Generated prose is what you buy, and generated prose is what funders have learned to spot. Program officers increasingly say out loud that obviously-generated applications are declined on sight, and several funders have added disclosure requirements. **VERIFY** any specific funder policy before citing it publicly; this is moving quickly.
-- **The library is a feed for the generator, not an asset you own.** You cannot take it with you and you cannot edit it in your own tools.
-- **The verification problem is untouched.** A model given a stale board list generates a fluent, confident, wrong paragraph. Generation without a staleness signal amplifies the exact error this tool exists to prevent.
-- **Cloud-only, with client narratives as training-adjacent input.** The terms vary and the questions are real.
-
-**How answerbank differs, stated plainly.** It generates nothing. It exposes verified, dated, human-written language to a model the user already chose to run, through MCP, on their own machine. The output is grounded in an organization's own approved sentences, and anything past its verification date is flagged to the model before it drafts. That is a categorically different artifact from generic AI grant writing, and it is the defensible answer to the AI-slop objection rather than a denial of it.
-
 ---
 
-## 7. Open-source and adjacent projects worth crediting
+## Open source and adjacent projects worth crediting
 
 - **Espanso** (https://github.com/espanso/espanso, GPL-3.0). Local-first text expansion done well. Different problem, compatible philosophy.
 - **Pandoc** (https://pandoc.org/, GPL-2.0-or-later). The obvious answer to document conversion, and deliberately not a dependency here because it requires a system install and the quickstart has to stay one command. Users who have it should absolutely use it; `answerbank export --format md` produces clean input for it.
